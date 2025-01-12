@@ -1,99 +1,112 @@
-# Jarvis: Voice-Controlled Personal Assistant
+# HARVIS Voice-Controlled Assistant
 
-## 📝 Summary
-Jarvis is a Python-based voice-controlled personal assistant inspired by the AI assistant from Iron Man. It greets the user based on the time of day and executes voice commands such as opening websites, performing Google searches, and more. Jarvis can also be extended with additional features as needed.
+hARVIS is a Python-based voice-controlled assistant that provides task automation features, including web browsing, system volume adjustment, and screen brightness control. It uses speech recognition and plays responses in real-time, coupled with a graphical user interface (GUI).
 
----
+## Features
 
-## 🔍 Features
-- **Greeting**: Plays a greeting based on the current time (e.g., "Good Morning," "Good Evening").
-- **Voice Commands**:
-  - Open websites like YouTube.
-  - Perform Google searches.
-  - Exit the application with a voice command.
-- **Custom Voice Responses**: Plays pre-recorded MP3 files for responses.
-- **Easily Extendable**: Add more commands and functionality as desired.
+1. **Voice Commands**:
 
----
+   - Open websites (e.g., YouTube, Google search).
+   - Adjust system volume (mute, max volume, etc.).
+   - Control screen brightness (increase, decrease, set maximum/minimum).
+   - Custom greetings based on the time of day.
+   - Quit the application with a command.
 
-## 📋 Prerequisites
-1. **Python**: Ensure Python 3.10+ is installed on your system. Download it from [python.org](https://www.python.org/).
-2. **Required Libraries**: Install the following Python libraries:
-   - `speech_recognition`
-   - `playsound==1.2.2`
-   - `datetime`
-   - `webbrowser`
-   - `os`
+2. **GUI**:
 
----
+   - Displays an interface that runs during the assistant’s operation.
 
-## 🔧 Setup Instructions
-1. **Clone the Repository**:
+3. **Introductory Video**:
+
+   - Plays a customizable intro video before activating the assistant.
+
+## Prerequisites
+
+Before running JARVIS, ensure your system meets the following requirements:
+
+1. **Python 3.7+**
+
+   - [Download Python](https://www.python.org/downloads/)
+
+2. **VLC Media Player**
+
+   - Install VLC Media Player for video playback functionality.
+   - [Download VLC](https://www.videolan.org/vlc/)
+
+3. **Audio Drivers**
+
+   - Ensure your system has proper audio drivers installed for volume adjustments.
+
+## Installation
+
+1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-username/jarvis.git
-   cd jarvis
+   git clone https://github.com/your-username/jarvis-assistant.git
+   cd jarvis-assistant
    ```
 
-2. **Install Dependencies**:
-   Run the following command to install the required Python libraries:
+2. Install the required Python libraries:
+
    ```bash
-   pip install -r requirements.txt
-   ```
-   *(Create a `requirements.txt` file with the following content for easy setup)*:
-   ```
-   speechrecognition
-   playsound==1.2.2
+   pip install playsound speechrecognition pillow python-vlc pycaw screen-brightness-control comtypes
    ```
 
-3. **Prepare Audio Files**:
-   - Place your custom MP3 files in the project directory.
-   - Ensure the file names match:
-     - `good_morning.mp3`
-     - `good_afternoon.mp3`
-     - `good_evening.mp3`
-     - `hello sir.mp3`
-     - `Sorry, I didn't catch that.mp3`
-     - `Unable to connect to the service.mp3`
-     - `Command acknowledged.mp3`
-     - `good bye.mp3`
+3. Ensure all necessary files are available:
 
-4. **Run the Application**:
-   Execute the following command in the terminal:
+   - **Audio Files**: Place the required audio files in the project directory (e.g., `good_morning.mp3`, `Adjusting brightness.mp3`).
+   - **Video File**: Include `jarvistest.mp4` in the directory for the introductory video.
+
+## Usage
+
+1. Run the script:
+
    ```bash
-   python jarvis.py
+   python harvis_fusion_code.py
    ```
 
----
+2. Speak commands into the microphone as prompted by the assistant.
 
-## 🛠️ How to Use
-1. Launch the application.
-2. Speak clearly into your microphone.
-3. Use commands such as:
-   - "Open YouTube" to open YouTube in your browser.
-   - "Search for Python tutorials" to perform a Google search.
-   - "Exit" or "Bye" to stop the program.
+3. Available commands:
 
----
+   - **"Open YouTube"**: Opens YouTube in a browser.
+   - **"Search for [query]"**: Performs a Google search for the specified query.
+   - **"Max volume" / "Mute volume"**: Adjusts system volume.
+   - **"Bright" / "Brighter" / "Brightest"**: Increases brightness by varying levels.
+   - **"Dim" / "Dimmer" / "Dimmest"**: Decreases brightness by varying levels.
+   - **"Exit" or "Bye"**: Exits the application.
 
-## 🚀 Extending Jarvis
-You can add more commands by modifying the `execute_command()` function in `jarvis.py`. For example:
-```python
-elif "open github" in command:
-    webbrowser.open("https://github.com")
+## File Structure
+
+```
+jarvis-assistant/
+├── harvis_fusion_code.py      # Main Python script
+├── jarvistest.mp4            # Intro video
+├── good_morning.mp3          # Example audio file
+├── Adjusting brightness.mp3  # Example audio file
+└── README.md                 # Documentation
 ```
 
----
+## Troubleshooting
 
-## 🖋️ Synopsis
-Jarvis is a beginner-friendly project designed to help users explore voice recognition, audio playback, and basic Python automation. It's an ideal starting point for anyone interested in AI-powered personal assistants.
+1. **Missing Files**:
 
----
+   - Ensure all referenced audio and video files are present in the project directory.
 
-## 🤝 Contributing
-Contributions are welcome! Feel free to fork the repository and submit a pull request with your enhancements.
+2. **Brightness Control Issues**:
 
----
+   - Verify your system supports brightness adjustment via `screen-brightness-control`.
 
-## 📜 License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+3. **VLC Errors**:
 
+   - Ensure VLC Media Player is installed and accessible via your system's PATH.
+
+## Contributing
+
+Feel free to submit issues or contribute to the project by creating a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Thank you
